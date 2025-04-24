@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chill Cola - Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="https://via.placeholder.com/150x50?text=Chill+Cola" alt="Chill Cola Logo">
+                <h2>Admin Panel</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active">
+                        <a href="#dashboard">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#products">
+                            <i class="fas fa-wine-bottle"></i>
+                            <span>Products</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#orders">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#customers">
+                            <i class="fas fa-users"></i>
+                            <span>Customers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#inventory">
+                            <i class="fas fa-boxes"></i>
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#analytics">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Navigation Bar -->
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="user-actions">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">99</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="https://via.placeholder.com/40" alt="Admin Profile">
+                        <span>Admin User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <section class="dashboard-content">
+                <h1>Dashboard Overview</h1>
+                
+                <!-- Stats Cards -->
+                <div class="stats-cards">
+                    <div class="card">
+                        <div class="card-icon sales">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Total Sales</h3>
+                            <p>$24,589</p>
+                            <span class="trend up">+12% <i class="fas fa-arrow-up"></i></span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon orders">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>New Orders</h3>
+                            <p>1,245</p>
+                            <span class="trend up">+5% <i class="fas fa-arrow-up"></i></span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon customers">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Customers</h3>
+                            <p>8,752</p>
+                            <span class="trend down">-2% <i class="fas fa-arrow-down"></i></span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon inventory">
+                            <i class="fas fa-box-open"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Inventory</h3>
+                            <p>1,089 Items</p>
+                            <span class="trend up">+8% <i class="fas fa-arrow-up"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders Table -->
+                <div class="recent-orders">
+                    <div class="section-header">
+                        <h2>Recent Orders</h2>
+                        <a href="#orders" class="view-all">View All</a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Product Management -->
+                <div class="product-management">
+                    <div class="section-header">
+                        <h2>Product Management</h2>
+                        <button class="add-product">
+                            <i class="fas fa-plus"></i> Add Product
+                        </button>
+                    </div>
+                    <div class="products-grid">
+                        <!-- Products will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add Product Modal -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Add New Product</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="productForm">
+                    <div class="form-group">
+                        <label for="productName">Product Name</label>
+                        <input type="text" id="productName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productDescription">Description</label>
+                        <textarea id="productDescription" rows="3"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productPrice">Price</label>
+                            <input type="number" id="productPrice" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productStock">Stock</label>
+                            <input type="number" id="productStock" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="productCategory">Category</label>
+                        <select id="productCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="cola">Cola</option>
+                            <option value="lemon">Lemon</option>
+                            <option value="orange">Orange</option>
+                            <option value="energy">Energy Drinks</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="productImage">Product Image</label>
+                        <input type="file" id="productImage">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn">Cancel</button>
+                        <button type="submit" class="save-btn">Save Product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

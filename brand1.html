@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chill Cola - Your Refreshing Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="brand1.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="Chill Cola Logo" >
+            <h1>Chill Cola Brands!</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="1122.html">Home</a></li>
+                <li><a href="#products">Our Drinks</a></li>
+                <li><a href="1122su.html">Sign Up</a></li>
+                <li><a href="1122li.html">Log In</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="products">
+            <h1>Our Refreshing Selection</h1>
+            <div class="product-grid">
+                <!-- Product cards will be inserted here by JavaScript -->
+            </div>
+        </section>
+
+        <aside class="cart-sidebar">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-cart"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cart-items">
+                <!-- Cart items will be inserted here by JavaScript -->
+                <div class="empty-cart-message">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Your cart is empty</p>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <div class="subtotal">
+                    <span>Subtotal:</span>
+                    <span class="subtotal-amount">$0.00</span>
+                </div>
+                <div class="tax">
+                    <span>Tax (10%):</span>
+                    <span class="tax-amount">$0.00</span>
+                </div>
+                <div class="total">
+                    <span>Total:</span>
+                    <span class="total-amount">$0.00</span>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </aside>
+    </main>
+
+    <div class="overlay"></div>
+
+    <script src="brand1.js"></script>
+</body>
+</html>
